@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 px-6">
       <div className="text-center space-y-8 max-w-3xl">
         <div className="space-y-6">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-600">
             Welcome to My Blog 
           </h1>
           <p className="text-gray-600 text-xl md:text-2xl leading-relaxed">
