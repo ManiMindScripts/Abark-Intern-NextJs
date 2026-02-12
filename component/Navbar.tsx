@@ -17,6 +17,11 @@ const Navbar = () => {
                         >
                              Blog
                         </Link>
+                        <Link href="/contact"
+                            className="text-gray-700 hover:text-blue-600 transition"
+                        >
+                             Contact
+                        </Link>
                     </div>
                 </div>
             </nav>
