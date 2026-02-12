@@ -14,7 +14,7 @@ export default async function MessagesPage() {
                     </p>
                 </div>
                 <Link
-                    href="/(day-7)/contact"
+                    href="/contact"
                     className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 
                              transition-colors duration-200 font-medium flex items-center gap-2"
                 >
@@ -43,7 +43,7 @@ export default async function MessagesPage() {
                     <h3 className="text-xl font-semibold text-gray-700 mb-2">No messages yet</h3>
                     <p className="text-gray-500 mb-6">Be the first one to send a message!</p>
                     <Link
-                        href="/(day-7)/contact"
+                        href="/contact"
                         className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
                     >
                         Send a Message
