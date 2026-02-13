@@ -92,7 +92,7 @@ export default async function Notespage() {
 
                   {/* Edit */}
                   <Link
-                    href={`/notes/${note.id}/edit`}
+                    href={`/notes/${note.id}`}
                     className="text-blue-500 hover:text-blue-700"
                   >
                     <Pencil size={18} />
