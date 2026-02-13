@@ -1,0 +1,16 @@
+import { z } from "zod"
+
+export const noteSchema = z.object({
+  title: z.string().min(3, "Title must be at least 3 characters"),
+  content: z.string().min(5, "Content must be at least 5 characters"),
+})
+
+export type NoteInput = z.infer<typeof noteSchema>
+
+
+type FormErrors = z.inferFlattenedErrors<typeof noteSchema>["fieldErrors"]
+
+export type UpdateFormState = {
+  success: boolean
+  errors: FormErrors
+}

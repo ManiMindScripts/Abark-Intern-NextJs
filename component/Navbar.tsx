@@ -17,10 +17,10 @@ const Navbar = () => {
                         >
                              Blog
                         </Link>
-                        <Link href="/contact"
+                        <Link href="/notes"
                             className="text-gray-700 hover:text-blue-600 transition"
                         >
-                             Contact
+                             Notes
                         </Link>
                     </div>
                 </div>
