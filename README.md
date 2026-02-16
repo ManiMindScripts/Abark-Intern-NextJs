@@ -34,3 +34,37 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+app/
+│
+├── api/
+│   ├── auth/
+│   │   ├── [...nextauth]/
+│   │   │   └── route.ts
+│   │   ├── login/
+│   │   │   └── route.ts
+│   │   └── register/
+│   │       └── route.ts
+│   │
+│   └── notes/
+│       ├── route.ts          // GET all, POST create
+│       └── [id]/
+│           └── route.ts      // GET one, PUT, DELETE
+│
+├── (auth)/
+│   ├── login/
+│   │   └── page.tsx
+│   └── register/
+│       └── page.tsx
+│
+├── (dashboard)/
+│   └── notes/
+│       └── page.tsx
+│
+middleware.ts
+auth.ts
+
+
+features/ │ ├── auth/ │   ├── auth.service.ts │   ├── auth.schema.ts │   ├── auth.dto.ts │   ├── auth.types.ts │   └── auth.repository.ts │ ├── notes/ │   ├── notes.service.ts │   ├── notes.schema.ts │   ├── notes.dto.ts │   ├── notes.types.ts │   └── notes.repository.ts
