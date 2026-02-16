@@ -92,6 +92,14 @@ export default function RegisterPage() {
         >
           {isPending ? "Creating account..." : "Register"}
         </button>
+
+        <button
+          type="button"
+          onClick={() => router.push("/login")}
+          className="w-full mt-3 bg-gray-200 text-black py-2 rounded-lg hover:bg-gray-300"
+        >
+          Already have an account? Login
+        </button>
       </form>
     </div>
   );
