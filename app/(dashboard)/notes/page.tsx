@@ -17,7 +17,7 @@ export default async function NotesPage() {
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold">Your Notes</h1>
         <Link
-          href="/notes/new"
+          href="/notes/create"
           className="px-4 py-2 bg-black text-white rounded-lg"
         >
           + New Note

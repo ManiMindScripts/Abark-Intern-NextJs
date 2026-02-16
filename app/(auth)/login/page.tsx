@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
-
   const [error, setError] = useState<string | null>(null);
   const [isPending, setIsPending] = useState(false);
 
@@ -19,34 +19,23 @@ export default function LoginPage() {
     const password = formData.get("password") as string;
 
     try {
-      
-      const csrfRes = await fetch("/api/auth/csrf");
-      const { csrfToken } = await csrfRes.json();
-
-      
-      const res = await fetch("/api/auth/callback/credentials?json=true", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams({
-          csrfToken,
-          email,
-          password,
-        }),
+      const res = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
       });
 
-      const data = await res.json();
-
-      if (!res.ok || data.error) {
-        setError("Invalid email or password");
+      if (!res || res.error) {
+        setError(res?.error || "Invalid email or password");
         setIsPending(false);
         return;
       }
+
+      // Success → redirect to notes page
       router.push("/notes");
       router.refresh();
     } catch (err) {
-      setError("Network error");
+      setError("Network error. Please try again.");
       setIsPending(false);
     }
   }
@@ -79,9 +68,7 @@ export default function LoginPage() {
           />
         </div>
 
-        {error && (
-          <p className="text-red-500 text-sm mb-4">{error}</p>
-        )}
+        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         <button
           disabled={isPending}
