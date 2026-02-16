@@ -20,3 +20,4 @@ export const updateUserNote = async (noteId: string, userId: string, data: Updat
 export const deleteUserNote = async (noteId: string, userId: string) => {
   return repo.deleteNote(noteId, userId);
 };
+

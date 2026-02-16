@@ -21,3 +21,4 @@ export const updateNote = async (id: string, userId: string, data: UpdateNoteDTO
 export const deleteNote = async (id: string, userId: string) => {
   return prisma.note.deleteMany({ where: { id, userId: parseInt(userId, 10)  } });
 };
+
